@@ -1,0 +1,24 @@
+import SearchSingle from './SearchSingle';
+import SearchMulti from './SearchMulti';
+
+class Layout extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      SearchSingleVisible: 'flex',
+      SearchMultiVisible: 'none'
+    }
+  }
+
+  SearchVisibleHandler = () => {
+    if ( this.state.SearchSingleVisible === 'flex' && this.state.SearchMultiVisible === 'none' ) {
+      this.setState({
+        SearchSingleVisible: 'none',
+        SearchMultiVisible: 'flex'
+      })
+    } else if ( this.state.SearchSingleVisible === 'none' && this.state.SearchMultiVisible === 'flex' ) {
+      this.setState({
+        SearchSingleVisible: 'flex',
+        SearchMultiVisible: 'none'
+      })
+    } 
